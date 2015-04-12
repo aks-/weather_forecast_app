@@ -6,5 +6,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
     </head>
     <body ng-app="ForecastApp">
+        <div class="main" ng-controller="WeatherController">
+            <div class="container">
+                <header>
+                    <input type="search" ng-model="cityName" placeholder="Enter City Name" ng-keyup="onKeyup($event)" autofocus/>
+                </header>
+            </div>
+        </div>
     </body>
 </html>
