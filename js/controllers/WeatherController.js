@@ -27,14 +27,12 @@ app.controller('WeatherController', ['$scope', '$timeout','WeatherService',
         $scope.onPlaceDelete = function(tabId) {
                 delete $scope.places[tabId];
                 if( $scope.places != null && $scope.currentTabId == tabId) {
-                        //console.log(Object.keys($scope.places));
                         $scope.currentTabId = Object.keys($scope.places)[0];;//$scope.places[0];
                 }
         }
 
         function getForecast() {
                 WeatherService.getCityWeatherReport($scope.cityName,function(data) {
-                        console.log(data);
                         if(data.cod != 404)
                         $timeout(function() {
                                 angular.forEach(data.list,function(value,key) {
@@ -42,7 +40,7 @@ app.controller('WeatherController', ['$scope', '$timeout','WeatherService',
                                         dateString = new Date(theDate.toGMTString());
                                         value.dt = dateString.getDate()+" "+months[dateString.getMonth()];
                                 });
-                                //$scope.forecast = data;
+
                                 $scope.cityName = "";
                                 $scope.currentTabId = new Date().getTime()+Math.floor((Math.random() * 100) + 1);
                                 $scope.places[$scope.currentTabId] = data;

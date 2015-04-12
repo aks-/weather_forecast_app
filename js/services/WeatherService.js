@@ -16,7 +16,6 @@ app.factory('WeatherService', ['$http', function($http) {
             callOpenWeatherMap(success);
         },
         getCurrnetCityName : function(callback) {
-            console.log("getCurrnetCityName");
             var geocoder = new google.maps.Geocoder();
             navigator.geolocation.getCurrentPosition(success, error, {
                 enableHighAccuracy: true,
@@ -25,8 +24,6 @@ app.factory('WeatherService', ['$http', function($http) {
             });
 
             function success(position) {
-                console.log("getCurrnetCityName: success");
-
                 var lat = position.coords.latitude;
                 var lng = position.coords.longitude;
                 var latLng = new google.maps.LatLng(lat, lng);
