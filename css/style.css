@@ -1,0 +1,112 @@
+@import url(http://fonts.googleapis.com/css?family=Dancing+Script:400,700);
+@import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+*{
+        -webkit-box-sizing : border-box;
+        font-family: 'Dancing Script', cursive;
+        -webkit-
+}
+i{
+        font-size: 35px;
+        padding-right: 20px;
+}
+.pure-g [class *="pure-u"]{
+        font-family: 'Dancing Script', cursive;
+}
+body{
+        margin :0px;
+        padding : 0px;
+        font-family: 'Dancing Script', cursive;
+}
+header{
+        position: fixed;
+        z-index: 1000;
+        top :0px;
+        width : 100%;
+        height : 80px;
+        background  : #011925;
+        padding: 0 5%;
+}
+header input{
+        width : 100%;
+        border: 0px;
+        color: white;
+        font-size : 30px;
+        background: transparent;
+        padding: 0 10px;
+        border-bottom: 2px solid rgb(31, 100, 154);
+        width: 100%;
+        top :30px;
+        position: relative;
+        border-radius: 0px;
+}
+header input:focus{
+        border :0px;
+}
+.content{
+        position: absolute;
+        top : 125px;
+        width: 100%;
+        padding: 10px 5%;
+        font-size: 28px;
+        font-weight: bold;
+        margin : auto;
+}
+.content-header{
+        position: absolute;
+        top : 80px;
+        width: 100%;
+        padding: 0px 5%;
+        font-size: 28px;
+        font-weight: bold;
+        margin : auto;
+        background : rgb(31, 96, 129);
+        color: white;
+        height: 55px;
+}
+.report{
+        color : white;
+        font-size : 20px;
+        font-weight: normal;
+        line-height: 42px;
+        padding: 0px 20px;
+        margin: 5px auto;
+}
+.pull-right{
+        text-align: right;
+}
+.date{
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 64px;
+}
+.subhead{
+        font-size: 18px;
+        color: #B8B8B8;
+        line-height: 18px;
+}
+.placename{
+        display: inline-block;
+        border-bottom: 3px solid rgb(16, 48, 65);
+        margin-right: 10px;
+        padding: 5px 10px;
+}
+.tab-header{
+        cursor: pointer;
+        position: relative;
+        padding-right: 25px;
+}
+.tab{
+        display: none;
+}
+.tab-header.active{
+        background: rgb(1, 25, 37);
+}
+.tab.active{
+        display: block;
+}
+.ion-ios-close-outline{
+        font-size: 16px;
+        position: absolute;
+        right: -15px;
+        top :0px;
+}
