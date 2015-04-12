@@ -3,6 +3,8 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=false"></script>
+
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
     </head>
     <body ng-app="ForecastApp">
@@ -11,7 +13,76 @@
                 <header>
                     <input type="search" ng-model="cityName" placeholder="Enter City Name" ng-keyup="onKeyup($event)" autofocus/>
                 </header>
+
+                <div class="content-header" >
+                    <div ng-repeat="(key,place) in places" class="placename  tab-header{{key}} tab-header"   ng-class="{  active : key == currentTabId}" >
+                        <span ng-click="onPlaceClick(key)">{{place.city.name}}, {{place.city.country}}</span>
+                        <i ng-click="onPlaceDelete(key)" class="ion-ios-close-outline"></i>
+                    </div>
+                </div>
+                <div class="content tab-{{key}} tab" ng-repeat="(key,place) in places" ng-class="{  active : key == currentTabId}" >
+                    <div class="report pure-g" ng-repeat="dayforecast in place.list" style="background : rgb(51, 1, {{1+$index*12}})" >
+                        <div class="pure-u-1 date" style="border-bottom: 2px solid rgb(51, 20, {{1+$index*12}})"  >
+                            <i class="ion-ios-sunny-outline" ng-show="dayforecast.weather[0].main == 'Clear'"></i>
+                            <i class="ion-ios-rainy-outline" ng-show="dayforecast.weather[0].main == 'Rain'"></i>
+                            {{ dayforecast.dt }}
+                        </div>
+                        <div class="pure-u-1-12">
+                            {{dayforecast.weather[0].main}}
+                        </div>
+                        <div class="pure-u-1-12 pull-right">
+                            <div class="subhead">pressure</div>
+                            {{dayforecast.pressure}}
+                        </div>
+                        <div class="pure-u-1-12 pull-right">
+                            <div class="subhead">humidity</div>
+                            {{dayforecast.humidity}}
+                        </div>
+                        <div class="pure-u-1-12 pull-right">
+                            <div class="subhead">min</div>
+                            {{dayforecast.temp.min}}{{unit}}
+                        </div>
+                        <div class="pure-u-1-12 pull-right">
+                            <div class="subhead">max</div>
+                            {{dayforecast.temp.max}}{{unit}}
+                        </div>
+                        <div class="pure-u-1-12 pull-right">
+                            <div class="subhead">morn</div>
+                            {{dayforecast.temp.morn}}{{unit}}
+                        </div>
+                        <div class="pure-u-1-12 pull-right">
+                            <div class="subhead">day</div>
+                            {{dayforecast.temp.day}}{{unit}}
+                        </div>
+                        <div class="pure-u-1-12 pull-right">
+                            <div class="subhead">eve</div>
+                            {{dayforecast.temp.eve}}{{unit}}
+                        </div>
+                        <div class="pure-u-1-12 pull-right">
+                            <div class="subhead">night</div>
+                            {{dayforecast.temp.night}}{{unit}}
+                        </div>
+                        <div class="pure-u-1-12 pull-right">
+                            <div class="subhead">speed</div>
+                            {{dayforecast.speed}}
+                        </div>
+                        <div class="pure-u-1-12 pull-right">
+                            <div class="subhead">deg</div>
+                            {{dayforecast.deg}}
+                        </div>
+                        <div class="pure-u-1-12 pull-right">
+                            <div class="subhead">clouds</div>
+                            {{dayforecast.clouds}}%
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- Modules -->
+        <script src="js/app.js"></script>
+        <!-- Controllers -->
+        <script src="js/controllers/WeatherController.js"></script>
+        <script src="js/services/WeatherService.js"></script>
     </body>
 </html>
