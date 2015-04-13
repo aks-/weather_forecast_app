@@ -4,6 +4,10 @@ This app uses http://openweathermap.org/ api to fetch the data
 This is web-app created in angular.js for the demonstration purpose.
 
 #### How to run
+Clone the app with 
+`git clone --recursive https://github.com/aks-/weather_forecast_app`
+`cd weather_forecast_app`
+
 You can run this app with any server, you could use something like python
 server
 
