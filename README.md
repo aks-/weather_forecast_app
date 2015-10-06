@@ -5,13 +5,12 @@ This is web-app created in angular.js for the demonstration purpose.
 
 #### How to run
 Clone the app with 
-`git clone --recursive https://github.com/aks-/weather_forecast_app`
-`cd weather_forecast_app`
+`git clone --recursive https://github.com/aks-/weather_forecast_app; cd weather_forecast_app`
 
-You can run this app with any server, you could use something like python
+You can run this app with any server, you could use something like python2.7
 server
 
-`python -m SimpleHTTPServer 8000`
+`python2.7 -m SimpleHTTPServer 8000`
 
 #### Usage
 * Start the app on localhost:8000 if you are running server on port 8000
